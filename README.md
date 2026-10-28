@@ -6,8 +6,7 @@ Ce projet présente la mise en place d'une infrastructure sur Azure (AKS) et le 
 
 - `terraform/` : Fichiers d'infrastructure as Code pour créer le cluster AKS.
 - `manifests/` : Manifestes Kubernetes pour l'application et l'ingress.
-- `observability/` : Fichiers de configuration pour Loki et Grafana.
-- `screenshots/` : Captures d'écran de preuve de fonctionnement.
+- `observability/` : Fichiers de configuration pour Loki et Grafana (avec les captures d'écran).
 
 ---
 
@@ -16,22 +15,22 @@ Ce projet présente la mise en place d'une infrastructure sur Azure (AKS) et le 
 ### 1. Synchronisation GitOps (ArgoCD)
 ArgoCD est configuré pour surveiller le dépôt Git et déployer automatiquement les modifications sur le cluster Kubernetes.
 
-![Console ArgoCD](screenshots/argo.png)
+![Console ArgoCD](Applying-manifests/observability/screenshots/argo.png)
 
 ### 2. Supervision et Accès Sécurisé (Grafana HTTPS)
 Grafana est accessible en HTTPS via l'Ingress NGINX configuré sur le cluster.
 
-![Grafana HTTPS](screenshots/grafana.png)
+![Grafana HTTPS](Applying-manifests/observability/screenshots/grafana.png)
 
 ### 3. État du cluster Kubernetes
 Vérification des pods et des services actifs sur le cluster AKS.
 
-![Terminal kubectl get pods](screenshots/terminal.png)
+![Terminal kubectl get pods](Applying-manifests/observability/screenshots/terminal.png)
 
 ### 4. Exécution et logs de l'application
 L'application Python tourne dans le cluster et génère ses logs de fonctionnement.
 
-![Logs de l'application Python](screenshots/logs.png)
+![Logs de l'application Python](Applying-manifests/observability/screenshots/reponseslog.png)
 
 ---
 
